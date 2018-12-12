@@ -1,0 +1,9 @@
+[package]
+name = "ggez_test"
+version = "0.1.0"
+authors = ["apple"]
+edition = "2018"
+
+[dependencies]
+ggez = "0.4"
+rand = "0.6"

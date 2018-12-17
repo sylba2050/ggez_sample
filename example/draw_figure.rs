@@ -79,7 +79,7 @@ impl event::EventHandler for MainState {
             &[vertices1, vertices2, vertices3],
         )?;
 
-        // 多角形
+        // 点
         let color = Color::from((155, 155, 155, 255)); //rgba
         graphics::set_color(ctx, color)?;
         let point1 = graphics::Point2::new(150., 150.); // 点

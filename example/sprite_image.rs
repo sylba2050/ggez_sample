@@ -5,6 +5,9 @@ use ggez::event;
 use ggez::graphics;
 use ggez::{Context, GameResult};
 
+use std::env;
+use std::path;
+
 struct MainState {
     image: graphics::Image,
 }
@@ -43,6 +46,13 @@ impl event::EventHandler for MainState {
 pub fn main() {
     let c = conf::Conf::new();
     let ctx = &mut Context::load_from_conf("super_simple", "ggez", c).unwrap();
+
+    if let Ok(manifest_dir) = env::var("CARGO_MANIFEST_DIR") {
+        let mut path = path::PathBuf::from(manifest_dir);
+        path.push("resources");
+        ctx.filesystem.mount(&path, true);
+    }
+
     let state = &mut MainState::new(ctx).unwrap();
     event::run(ctx, state).unwrap();
 }

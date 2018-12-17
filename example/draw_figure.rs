@@ -62,7 +62,7 @@ impl event::EventHandler for MainState {
         graphics::set_color(ctx, color)?;
         graphics::rectangle(
             ctx,
-            DrawMode::Line(10.), // 塗りつぶしモード
+            DrawMode::Line(10.), // 線モード
             graphics::Rect::new(600., 400., 150., 100.), // x, y, w, h
         )?;
 
